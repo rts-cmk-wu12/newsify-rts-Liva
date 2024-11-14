@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newsify</title>
+    <script type="module" src="./main.js"></script>
 </head>
+
 <body>
-    
+    <main>
+        <div id="slider" class="slider">
+            <div class="slider__container">
+                <div id="slider__roll" class="slider__roll">
+                    <div class="slider__info">
+                        <img src="./icon/onboarding-one.svg" alt="onboarding">
+                        <div>
+                            <h2>Stay Connected, Everywhere, Anytime</h2>
+                            <p>Welcome to Newsify, your ultimate destination for breaking news, exclusive stories, and
+                                tailored content.</p>
+                        </div>
+                    </div>
+                    <div class="slider__info">
+                        <img src="./icon/onboarding-two.svg" alt="onboarding">
+                        <div>
+                            <h2>Become a Savvy Global Citizen.</h2>
+                            <p>Discover tailored news that aligns with your interests and preferences. Your personalized
+                                news journey awaits!</p>
+                        </div>
+                    </div>
+                    <div class="slider__info">
+                        <img src="./icon/onboarding-three.svg" alt="onboarding">
+                        <div>
+                            <h2>Enhance your News Journey Now!</h2>
+                            <p>Be part of our dynamic community and contribute your insights and participate in
+                                enriching conversations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider__dots" id="slider__dots"></div>
+        <div>
+            <form action="./login.html">
+                <button class="slider__skip">skip</button>
+            </form>
+            <button id="slider__next" class="slider__next">continue</button>
+        </div>
+    </main>
 </body>
+
 </html>
