@@ -28,11 +28,15 @@ next.addEventListener('click', () => {
         newIndex = currentIndex + 1
     }
 
+    else if (currentIndex = 2) {
+        location.assign('login.html');
+    }
+
     const offset = newIndex * sliderWindowWidth
     sliderRoll.animate([{ transform: `translateX(-${offset}px)` }], { duration: 500, fill: 'both' })
     currentIndex = newIndex
 
     sliderDots();
-})
+});
 
 sliderDots();
