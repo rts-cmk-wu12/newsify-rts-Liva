@@ -1,0 +1,7 @@
+@mixin button-template($width: 50%) {
+    width: $width;
+    padding-block: 1rem;
+    font-size: 1.125em;
+    text-transform: capitalize;
+    border-radius: 2rem;
+}

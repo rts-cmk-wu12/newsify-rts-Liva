@@ -1,0 +1,30 @@
+@use './root.scss';
+@use './mixins.scss';
+
+%button-transparent-small {
+    @include mixins.button-template;
+    border: solid root.$dark-sage-green;
+    color: root.$dark-sage-green;
+    background: none;
+}
+
+%button-green-small {
+    @include mixins.button-template;
+    border: none;
+    background-color: root.$dark-sage-green;
+    color: root.$white;
+}
+
+%button-transparent-big {
+    @include mixins.button-template(100%);
+    border: solid root.$grey;
+    color: root.$soft-black;
+    background: none;
+}
+
+%button-green-big {
+    @include mixins.button-template(100%);
+    border: none;
+    background-color: root.$dark-sage-green;
+    color: root.$white;
+}

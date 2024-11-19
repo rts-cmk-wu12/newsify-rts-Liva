@@ -1,4 +1,13 @@
 @use '../placeholders/root.scss';
+@use '../placeholders/buttons.scss';
+
+.onboarding {
+    display: flex;
+    flex-direction: column;
+    height: 96vh;
+    justify-content: space-between;
+    padding: .5rem;
+}
 
 .slider {
     &__container {
@@ -15,8 +24,14 @@
         min-width: 100%;
         text-align: center;
 
+        img {
+            width: 100%;
+            margin-top: 1.1rem;
+        }
+
         h2 {
             font-size: 2rem;
+            margin-bottom: 1rem;
         }
 
         p {
@@ -30,6 +45,32 @@
         justify-content: center;
         margin-top: 1rem;
     }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        width: 95%;
+    }
+
+    &__skip {
+        @extend %button-transparent-small;
+        
+        button {
+            background: none;
+            border: none;
+            font-size: 1em;
+            text-transform: capitalize;
+            color: root.$dark-sage-green;
+            width: 100%;
+        }
+    }
+
+    &__next {
+        @extend %button-green-small;
+    }
 }
 
 .dot {
@@ -40,6 +81,7 @@
 }
 
 .current-dot {
+    transition: 300ms ease-in;
     width: 3.5rem;
     background-color: root.$dark-sage-green;
 }
