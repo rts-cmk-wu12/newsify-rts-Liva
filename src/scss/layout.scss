@@ -11,3 +11,7 @@ html {
 p + p {
     @extend %lineheight-reset;
 }
+
+button {
+    @extend %cursor-reset;
+}
