@@ -8,6 +8,15 @@
     background: none;
 }
 
+%button-transparent-white-small {
+    @include mixins.button-template(50%);
+    padding-block: .5rem;
+    background: none;
+    border: 1px solid root.$white;
+    color: root.$white;
+    font-size: .8em;
+}
+
 %button-green-small {
     @include mixins.button-template;
     border: none;
