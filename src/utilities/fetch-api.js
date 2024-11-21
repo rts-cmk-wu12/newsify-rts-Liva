@@ -3,7 +3,7 @@ const API_KEY = 'DbhMGwHfGXAX7nagpwULKzKGGotHPTx4';
 const API_URL = 'https://api.nytimes.com/svc/';
 
 const endpoints = {
-    homeArchive: 'archive/v1/',
+    homeTopStories: 'topstories/v2/',
     mostPopularByViews: 'mostpopular/v2/viewed/'
 }
 
@@ -16,8 +16,8 @@ async function fetchMostPopularByViews(days = 1) {
     return data
 }
 
-async function fetchHomeArchive(year = 2024, month = 1) {
-    const url = new URL(`${year}/${month}.json`, API_URL + endpoints.homeArchive);
+async function fetchHomeTopStories(section = 'home') {
+    const url = new URL(`${section}.json`, API_URL + endpoints.homeTopStories);
     url.searchParams.set('api-key', API_KEY);
     const response = await fetch(url);
     const data = await response.json();
@@ -26,6 +26,6 @@ async function fetchHomeArchive(year = 2024, month = 1) {
 }
 
 module.exports = {
-    fetchHomeArchive,
+    fetchHomeTopStories,
     fetchMostPopularByViews
 }
