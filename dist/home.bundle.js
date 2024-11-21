@@ -37,7 +37,18 @@ eval("const API_KEY = 'DbhMGwHfGXAX7nagpwULKzKGGotHPTx4';\n\nconst API_URL = 'ht
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _json_sections_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../json/sections.json */ \"./src/json/sections.json\");\n\n\nconst { fetchHomeTopStories } = __webpack_require__(/*! ./fetch-api.js */ \"./src/utilities/fetch-api.js\");\nconst homeNews = await fetchHomeTopStories();\n\nconst newsSections = [...new Set(homeNews.results.map(sections => sections.section))];\n\nconst homeNewsContainer = document.querySelector('#home-news-container');\n\nfunction truncate(text, length) {\n    if (text.length > length) {\n    return text.slice(0, length) + '...';\n}\n\nreturn text;\n}\n\nnewsSections.forEach(category => {\n    const matchingArticles = homeNews.results.filter(article => article.section === category);\n    const detailsElement = document.createElement('details');\n    detailsElement.innerHTML = `\n        <summary class=\"news__category\">\n            <img src=\"icon/newsify-logo.svg\" alt=\"logo\" class=\"news__logo\">\n            ${category}\n        </summary>`;\n    \n    matchingArticles.forEach(article => {\n        const articleElement = document.createElement('article');\n        articleElement.innerHTML = `\n            <img src=\"img/placeholder.png\" alt=\"article cover\" class=\"news__article__cover\">\n            <section>\n                <h2 class=\"news__article__headline\">${article.title}</h2>\n                <p class=\"news__article__text\">${truncate(article.abstract, 90)}</p>\n            </section>`;\n        articleElement.classList.add('news__article');\n        detailsElement.append(articleElement);\n        \n        articleElement.addEventListener('click', () => {\n            window.open(article.url);\n        });\n    });\n\n    detailsElement.classList.add('news');\n    homeNewsContainer.append(detailsElement);\n\n});\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } }, 1);\n\n//# sourceURL=webpack://newsify-rts-liva/./src/utilities/home-articles.js?");
+eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _json_sections_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../json/sections.json */ \"./src/json/sections.json\");\n\n\nconst { saveArticle } = __webpack_require__(/*! ./save-article.js */ \"./src/utilities/save-article.js\");\nconst { fetchHomeTopStories } = __webpack_require__(/*! ./fetch-api.js */ \"./src/utilities/fetch-api.js\");\nconst homeNews = await fetchHomeTopStories();\n\nconst newsSections = [...new Set(homeNews.results.map(sections => sections.section))];\n\nconst homeNewsContainer = document.querySelector('#home-news-container');\n\nfunction truncate(text, length) {\n    if (text.length > length) {\n        return text.slice(0, length) + '...';\n    }\n\n    return text;\n}\n\nnewsSections.forEach(category => {\n    const matchingArticles = homeNews.results.filter(article => article.section === category);\n    const detailsElement = document.createElement('details');\n    detailsElement.innerHTML = `\n        <summary class=\"news__category\">\n            <img src=\"icon/newsify-logo.svg\" alt=\"logo\" class=\"news__logo\">\n            ${category}\n        </summary>`;\n\n    matchingArticles.forEach(article => {\n        const articleElement = document.createElement('article');\n        articleElement.innerHTML = `\n            <img src=\"img/placeholder.png\" alt=\"article cover\" class=\"news__article__cover\">\n            <section>\n                <h2 class=\"news__article__headline\">${article.title}</h2>\n                <p class=\"news__article__text\">${truncate(article.abstract, 90)}</p>\n            </section>`;\n        articleElement.classList.add('news__article');\n        detailsElement.append(articleElement);\n\n        articleElement.addEventListener('click', () => {\n            window.open(article.url);\n        });\n\n        const swipeAction = document.createElement('div');\n        swipeAction.className = 'swipe-action';\n\n        const bookmarkIcon = document.createElement('img');\n        bookmarkIcon.src = '/icon/bookmark-white.svg';\n        bookmarkIcon.alt = 'Bookmark';\n        bookmarkIcon.style.width = '2rem';\n        bookmarkIcon.style.height = '2rem';\n\n        swipeAction.appendChild(bookmarkIcon);\n        articleElement.appendChild(swipeAction);\n\n        articleElement.appendChild(swipeAction);\n\n\n        saveArticle(articleElement, article.title);\n    });\n\n    detailsElement.classList.add('news');\n    homeNewsContainer.append(detailsElement);\n\n});\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } }, 1);\n\n//# sourceURL=webpack://newsify-rts-liva/./src/utilities/home-articles.js?");
+
+/***/ }),
+
+/***/ "./src/utilities/save-article.js":
+/*!***************************************!*\
+  !*** ./src/utilities/save-article.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   saveArticle: () => (/* binding */ saveArticle)\n/* harmony export */ });\nfunction saveArticle(articleElement, articleTitle) {\n    let startX, endX;\n  \n    if (!articleElement) return;\n  \n    articleElement.addEventListener('touchstart', e => {\n      startX = e.touches[0].clientX;\n    });\n  \n    articleElement.addEventListener('touchmove', e => {\n      endX = e.touches[0].clientX;\n    });\n  \n    articleElement.addEventListener('touchend', () => {\n      if (startX - endX > 50) {\n        articleElement.classList.add('swiped');\n        localStorage.setItem(articleTitle, 'saved');\n      } else if (endX - startX > 50) {\n        articleElement.classList.remove('swiped');\n      }\n    });\n  \n    const swipeAction = articleElement.querySelector('.swipe-action');\n    if (swipeAction) {\n      swipeAction.addEventListener('click', () => {\n        console.log('Arkiver eller slet nyhed!');\n        articleElement.remove();\n      });\n    }\n  }\n  \n\n//# sourceURL=webpack://newsify-rts-liva/./src/utilities/save-article.js?");
 
 /***/ }),
 
@@ -146,6 +157,23 @@ eval("module.exports = /*#__PURE__*/JSON.parse('{\"sections\":[\"arts\",\"automo
 /******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
 /******/ 			queue && queue.d < 0 && (queue.d = 0);
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
