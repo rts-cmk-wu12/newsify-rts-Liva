@@ -16,7 +16,6 @@ loginBtn.addEventListener('click', () => {
 loginDialog.addEventListener('click', e => {
     if (e.target === loginSubmit) {
         loginDialog.close();
-        localStorage.setItem('loggedin', true);
         location.assign('home.html');
     }
 
