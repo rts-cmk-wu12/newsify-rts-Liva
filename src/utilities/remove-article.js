@@ -15,6 +15,9 @@ export function removeArticle(articleElement, articleTitle) {
       if (startX - endX > 50) {
         articleElement.classList.add('swiped-remove');
         localStorage.removeItem(articleTitle);
+        setTimeout(() => {
+          articleElement.remove();
+        },520)
       } else if (endX - startX > 50) {
         articleElement.classList.remove('swiped-remove');
       }

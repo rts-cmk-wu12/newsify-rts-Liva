@@ -18,5 +18,6 @@ module.exports = {
         home: './src/home.js',
         archive: './src/archive.js',
         popular: './src/popular.js',
+        settings: './src/settings.js',
     },
 }

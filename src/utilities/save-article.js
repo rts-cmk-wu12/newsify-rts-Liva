@@ -23,7 +23,6 @@ export function saveArticle(articleElement, articleTitle) {
     const swipeAction = articleElement.querySelector('.swipe-action');
     if (swipeAction) {
       swipeAction.addEventListener('click', () => {
-        console.log('Arkiver eller slet nyhed!');
         articleElement.remove();
       });
     }

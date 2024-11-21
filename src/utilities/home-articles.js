@@ -41,7 +41,7 @@ newsSections.forEach(category => {
         });
 
         const swipeAction = document.createElement('div');
-        swipeAction.className = 'swipe-action';
+        swipeAction.className = 'swipe-action-add';
 
         const bookmarkIcon = document.createElement('img');
         bookmarkIcon.src = '/icon/bookmark-white.svg';

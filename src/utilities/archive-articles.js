@@ -32,7 +32,7 @@ archiveNews.results.forEach(article => {
             });
 
             const swipeAction = document.createElement('div');
-            swipeAction.className = 'swipe-action';
+            swipeAction.className = 'swipe-action-remove';
 
             const trashcanIcon = document.createElement('img');
             trashcanIcon.src = '/icon/trashcan-white.svg';
