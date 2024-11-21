@@ -16,5 +16,6 @@ module.exports = {
         index: './src/index.js',
         login: './src/login.js',
         home: './src/home.js',
+        popular: './src/popular.js',
     },
 }
