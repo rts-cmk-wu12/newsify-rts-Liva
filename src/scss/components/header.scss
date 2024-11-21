@@ -6,6 +6,8 @@
     align-items: center;
     margin-top: 3rem;
     padding-inline: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid root.$soft-black;
 
     &__logo {
         display: flex;
