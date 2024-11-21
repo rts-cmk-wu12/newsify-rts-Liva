@@ -1,5 +1,6 @@
 import sectionsData from '../json/sections.json';
 
+const { saveArticle } = require('./save-article.js');
 const { fetchHomeTopStories } = require('./fetch-api.js');
 const homeNews = await fetchHomeTopStories();
 
@@ -9,10 +10,10 @@ const homeNewsContainer = document.querySelector('#home-news-container');
 
 function truncate(text, length) {
     if (text.length > length) {
-    return text.slice(0, length) + '...';
-}
+        return text.slice(0, length) + '...';
+    }
 
-return text;
+    return text;
 }
 
 newsSections.forEach(category => {
@@ -23,7 +24,7 @@ newsSections.forEach(category => {
             <img src="icon/newsify-logo.svg" alt="logo" class="news__logo">
             ${category}
         </summary>`;
-    
+
     matchingArticles.forEach(article => {
         const articleElement = document.createElement('article');
         articleElement.innerHTML = `
@@ -34,10 +35,27 @@ newsSections.forEach(category => {
             </section>`;
         articleElement.classList.add('news__article');
         detailsElement.append(articleElement);
-        
+
         articleElement.addEventListener('click', () => {
             window.open(article.url);
         });
+
+        const swipeAction = document.createElement('div');
+        swipeAction.className = 'swipe-action';
+
+        const bookmarkIcon = document.createElement('img');
+        bookmarkIcon.src = '/icon/bookmark-white.svg';
+        bookmarkIcon.alt = 'Bookmark';
+        bookmarkIcon.style.width = '2rem';
+        bookmarkIcon.style.height = '2rem';
+
+        swipeAction.appendChild(bookmarkIcon);
+        articleElement.appendChild(swipeAction);
+
+        articleElement.appendChild(swipeAction);
+
+
+        saveArticle(articleElement, article.title);
     });
 
     detailsElement.classList.add('news');
