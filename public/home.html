@@ -1,15 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newsify - Home</title>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./main.bundle.js"></script>
+    <script type="module" src="./home.bundle.js"></script>
 </head>
+
 <body>
     <header class="header">
         <a href="index.html" class="header__logo"><img src="icon/newsify-logo.svg" alt="logo">newsify</a>
-        <input type="search" name="search-input" class="header__search-input" id="search-input" placeholder="Search news">
+        <input type="search" name="search-input" class="header__search-input" id="search-input"
+            placeholder="Search news">
     </header>
+    <main>
+        <details class="news">
+            <summary class="news__category">
+                <img src="icon/newsify-logo.svg" alt="logo" class="news__logo">
+                category
+            </summary>
+
+            <article class="news__article">
+                <img src="img/onboarding-one.svg" alt="article cover" class="news__article__cover">
+                <section>
+                    <h2 class="news__article__headline">headline</h2>
+                    <p>Surfing is a surface water sport in which the wave rider, referred to as...
+                    </p>
+                </section>
+            </article>
+            <article class="news__article">
+                <img src="img/onboarding-one.svg" alt="article cover" class="news__article__cover">
+                <section>
+                    <h2 class="news__article__headline">headline</h2>
+                    <p>Surfing is a surface water sport in which the wave rider, referred to as...
+                    </p>
+                </section>
+            </article>
+        </details>
+        <details class="news">
+            <summary class="news__category">
+                <img src="icon/newsify-logo.svg" alt="logo" class="news__logo">
+                category
+            </summary>
+
+            <article class="news__article">
+                <img src="img/onboarding-one.svg" alt="article cover" class="news__article__cover">
+                <section>
+                    <h2 class="news__article__headline">headline</h2>
+                    <p>Surfing is a surface water sport in which the wave rider, referred to as...
+                    </p>
+                </section>
+            </article>
+            <article class="news__article">
+                <img src="img/onboarding-one.svg" alt="article cover" class="news__article__cover">
+                <section>
+                    <h2 class="news__article__headline">headline</h2>
+                    <p>Surfing is a surface water sport in which the wave rider, referred to as...
+                    </p>
+                </section>
+            </article>
+        </details>
+    </main>
+
+    <footer class="footer">
+        <nav>
+            <ul class="footer__list">
+                <li><a href="#" class="footer__list-item" aria-current="page"><img src="./icon/home-green.svg" alt="home-icon" class="footer__icon">home</a>
+                </li>
+                <li><a href="./archive.html" class="footer__list-item"><img src="./icon/bookmark-grey.svg" alt="archive-icon"
+                    class="footer__icon">archive</a></li>
+                <li><a href="./popular.html" class="footer__list-item"><img src="./icon/star-grey.svg" alt="popular-icon"
+                    class="footer__icon">popular</a></li>
+                <li><a href="./settings.html" class="footer__list-item"><img src="./icon/settings-grey.svg" alt="settings-icon"
+                    class="footer__icon">settings</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
+
 </html>
