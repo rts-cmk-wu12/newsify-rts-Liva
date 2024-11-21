@@ -15,7 +15,7 @@ function onboardingShow() {
     onboarding.style.display = 'flex';
 }
 
-setTimeout(function() {
+setTimeout(function () {
     splashScreenHidden();
     onboardingShow();
 }, 5000);

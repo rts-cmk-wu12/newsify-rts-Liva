@@ -1,4 +1,3 @@
-const container = document.querySelector('#slider');
 const sliderRoll = document.querySelector('#slider__roll');
 
 const next = document.querySelector('#slider__next');
@@ -23,7 +22,7 @@ function sliderDots() {
 
 next.addEventListener('click', () => {
     let newIndex = currentIndex
-    
+
     if (newIndex < sliderRoll.children.length - 1) {
         newIndex = currentIndex + 1
     }
