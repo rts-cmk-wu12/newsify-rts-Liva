@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsify login</title>
+    <script type="module" src="./login.bundle.js"></script>
+    <script type="module" src="./main.bundle.js"></script>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="welcome">
+            <img src="./icon/newsify-logo.svg" alt="logo" class="welcome__logo">
+            <h1 class="welcome__name darkmode-white-text">newsify</h1>
+            <p class="welcome__text darkmode-grey-text">Welcome! Let's dive into your account!</p>
+        </div>
+        <main>
+            <div class="authenticate">
+                <div class="continue-with" id="login-buttons">
+                    <button class="continue-with__button darkmode-grey-text" id="login-facebook">Continue with Facebook</button>
+                    <button class="continue-with__button darkmode-grey-text" id="login-google">Continue with Google</button>
+                </div>
+                <div class="separator">
+                    <span class="darkmode-white-line"></span>
+                    <p class="darkmode-white-text">or</p>
+                    <span class="darkmode-white-line"></span>
+                </div>
+                <div class="signup">
+                    <button class="signup__login" id="signup__login">Login with password</button>
+                    <div class="signup__link">
+                        <p class="darkmode-grey-text">Don't have an account?</p>
+                        <button id="signup-btn">signup</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <dialog id="login-dialog" class="dialog">
+        <div>
+            <form>
+                <div class="dialog__inputs">
+                    <div class="dialog__input">
+                        <label for="login-user">username:</label>
+                        <input type="text" name="username" id="login-user" placeholder="Your username..." minlength="8" required>
+                    </div>
+                    <div class="dialog__input">
+                        <label for="login-password">password:</label>
+                        <input type="password" name="password" id="login-password" placeholder="Your password..." pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$" required>
+                    </div>
+                </div>
+                <button type="submit" id="login-submit" class="dialog__submit">login</button>
+            </form>
+
+            <div class="dialog__signup">
+                <p>Don't have an account yet?</p>
+                <button id="login__signup-btn">Signup here</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="signup-dialog" class="dialog">
+        <div>
+            <form>
+                <div class="dialog__inputs">
+                    <div class="dialog__input">
+                        <label for="signup-user">username:</label>
+                        <input type="text" name="signUsername" id="signup-user" placeholder="Your username..."
+                            minlength="8" required>
+                    </div>
+                    <div class="dialog__input">
+                        <label for="signup-email">email:</label>
+                        <input type="email" name="signEmail" id="signup-email" placeholder="Your email..."
+                            pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" required>
+                    </div>
+                    <div class="dialog__input">
+                        <label for="signup-password">Create password:</label>
+                        <input type="password" name="signPassword" id="signup-password" placeholder="Your password..." required>
+                    </div>
+                    <div class="dialog__input">
+                        <label for="signup-password-r">Repeat password:</label>
+                        <input type="password" name="sign-password-r" id="signup-password-r"
+                            placeholder="Your password again..." required>
+                    </div>
+                </div>
+                <button type="submit" id="signup-submit" class="dialog__submit">Signup</button>
+            </form>
+
+            <div class="dialog__signup">
+                <p>Already have an account?</p>
+                <button id="signup__login-btn">Login here</button>
+            </div>
+        </div>
+    </dialog>
+
+</body>
+
+</html>
