@@ -22,7 +22,7 @@ categories.forEach((category) => {
     const toggleId = `toggle-${category}`;
 
     categoryToggleContainer.innerHTML = `
-    <div class="settings__category">
+    <div class="settings__category darkmode-white-text">
     <img src="icon/newsify-logo.svg" alt="logo" class="settings__logo">
             ${category}
     </div>

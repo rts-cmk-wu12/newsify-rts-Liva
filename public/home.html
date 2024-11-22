@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newsify - Home</title>
-    <script type="module" src="./main.bundle.js"></script>
     <script type="module" src="./home.bundle.js"></script>
+    <script type="module" src="./main.bundle.js"></script>
 </head>
 
 <body>
     <header class="header">
-        <a href="#" class="header__logo"><img src="icon/newsify-logo.svg" alt="logo">newsify</a>
-        <input type="search" name="search-input" class="header__search-input" id="search-input"
+        <a href="#" class="header__logo darkmode-white-text"><img src="icon/newsify-logo.svg" alt="logo">newsify</a>
+        <input type="search" name="search-input" class="header__search-input darkmode-grey-input" id="search-input"
             placeholder="Search news">
     </header>
     <main id="home-news-container">
@@ -21,14 +21,22 @@
     <footer class="footer">
         <nav>
             <ul class="footer__list">
-                <li><a href="#" class="footer__list-item" aria-current="page"><img src="./icon/home-green.svg" alt="home-icon" class="footer__icon">home</a>
+                <li><a href="#" aria-current="page" class="footer__list-item darkmode-white-text">
+                    <img src="./icon/home-green.svg" alt="home-icon" class="footer__icon">
+                    home</a>
                 </li>
-                <li><a href="./archive.html" class="footer__list-item"><img src="./icon/bookmark-grey.svg" alt="archive-icon"
-                    class="footer__icon">archive</a></li>
-                <li><a href="./popular.html" class="footer__list-item"><img src="./icon/star-grey.svg" alt="popular-icon"
-                    class="footer__icon">popular</a></li>
-                <li><a href="./settings.html" class="footer__list-item"><img src="./icon/settings-grey.svg" alt="settings-icon"
-                    class="footer__icon">settings</a></li>
+                <li><a href="./archive.html" class="footer__list-item darkmode-white-text">
+                    <img src="./icon/bookmark-grey.svg" alt="archive-icon" class="footer__icon light-mode-img">
+                    <img src="./icon/archive-light.svg" alt="archive-icon" class="footer__icon dark-mode-img">
+                    archive</a></li>
+                <li><a href="./popular.html" class="footer__list-item darkmode-white-text">
+                    <img src="./icon/star-grey.svg" alt="popular-icon" class="footer__icon light-mode-img">
+                    <img src="./icon/star-light.svg" alt="popular-icon" class="footer__icon dark-mode-img">
+                    popular</a></li>
+                <li><a href="./settings.html" class="footer__list-item darkmode-white-text">
+                    <img src="./icon/settings-grey.svg" alt="settings-icon" class="footer__icon light-mode-img">
+                    <img src="./icon/settings-light.svg" alt="settings-icon" class="footer__icon dark-mode-img">
+                    settings</a></li>
             </ul>
         </nav>
     </footer>

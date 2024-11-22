@@ -31,6 +31,13 @@
     background: none;
 }
 
+%button-transparent-green-big {
+    @include mixins.button-template(100%);
+    border: solid root.$dark-sage-green;
+    color: root.$dark-sage-green;
+    background: none;
+}
+
 %button-green-big {
     @include mixins.button-template(100%);
     border: none;

@@ -5,32 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newsify login</title>
-    <script type="module" src="./main.bundle.js"></script>
     <script type="module" src="./login.bundle.js"></script>
+    <script type="module" src="./main.bundle.js"></script>
 </head>
 
 <body>
     <div class="login-container">
         <div class="welcome">
             <img src="./icon/newsify-logo.svg" alt="logo" class="welcome__logo">
-            <h1 class="welcome__name">newsify</h1>
-            <p class="welcome__text">Welcome! Let's dive into your account!</p>
+            <h1 class="welcome__name darkmode-white-text">newsify</h1>
+            <p class="welcome__text darkmode-grey-text">Welcome! Let's dive into your account!</p>
         </div>
         <main>
             <div class="authenticate">
                 <div class="continue-with" id="login-buttons">
-                    <button class="continue-with__button" id="login-facebook">Continue with Facebook</button>
-                    <button class="continue-with__button" id="login-google">Continue with Google</button>
+                    <button class="continue-with__button darkmode-grey-text" id="login-facebook">Continue with Facebook</button>
+                    <button class="continue-with__button darkmode-grey-text" id="login-google">Continue with Google</button>
                 </div>
                 <div class="separator">
-                    <span></span>
-                    <p>or</p>
-                    <span></span>
+                    <span class="darkmode-white-line"></span>
+                    <p class="darkmode-white-text">or</p>
+                    <span class="darkmode-white-line"></span>
                 </div>
                 <div class="signup">
                     <button class="signup__login" id="signup__login">Login with password</button>
                     <div class="signup__link">
-                        <p>Don't have an account?</p>
+                        <p class="darkmode-grey-text">Don't have an account?</p>
                         <button id="signup-btn">signup</button>
                     </div>
                 </div>

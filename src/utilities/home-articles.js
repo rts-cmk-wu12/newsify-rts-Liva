@@ -21,7 +21,7 @@ newsSections.forEach(category => {
     const matchingArticles = homeNews.results.filter(article => article.section === category);
     const detailsElement = document.createElement('details');
     detailsElement.innerHTML = `
-        <summary class="news__category">
+        <summary class="news__category darkmode-white-text">
             <img src="icon/newsify-logo.svg" alt="logo" class="news__logo">
             ${category}
         </summary>`;
@@ -31,8 +31,8 @@ newsSections.forEach(category => {
         articleElement.innerHTML = `
             <img src="img/placeholder.png" alt="article cover" class="news__article__cover">
             <section>
-                <h2 class="news__article__headline">${article.title}</h2>
-                <p class="news__article__text">${truncate(article.abstract, 90)}</p>
+                <h2 class="news__article__headline darkmode-white-text">${article.title}</h2>
+                <p class="news__article__text darkmode-grey-text">${truncate(article.abstract, 90)}</p>
             </section>`;
         articleElement.classList.add('news__article');
         detailsElement.append(articleElement);

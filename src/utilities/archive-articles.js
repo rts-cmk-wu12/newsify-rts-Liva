@@ -21,8 +21,8 @@ archiveNews.results.forEach(article => {
             articleElement.innerHTML = `
             <img src="img/placeholder.png" alt="article cover" class="news__article__cover">
             <section>
-                <h2 class="news__article__headline">${article.title}</h2>
-                <p class="news__article__text">${truncate(article.abstract, 90)}</p>
+                <h2 class="news__article__headline darkmode-white-text">${article.title}</h2>
+                <p class="news__article__text darkmode-grey-text">${truncate(article.abstract, 90)}</p>
             </section>`;
             articleElement.classList.add('news__article');
             archiveNewsContainer.append(articleElement);
