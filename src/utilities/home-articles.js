@@ -45,7 +45,7 @@ newsSections.forEach(category => {
         swipeAction.className = 'swipe-action-add';
 
         const bookmarkIcon = document.createElement('img');
-        bookmarkIcon.src = '/icon/bookmark-white.svg';
+        bookmarkIcon.src = 'icon/bookmark-white.svg';
         bookmarkIcon.alt = 'Bookmark';
         bookmarkIcon.style.width = '2rem';
         bookmarkIcon.style.height = '2rem';
