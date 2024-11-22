@@ -1,5 +1,6 @@
 import sectionsData from '../json/sections.json';
 
+const { hideDisabledCategories } = require('./hide-categories.js');
 const { fetchMostPopularByViews } = require('./fetch-api.js');
 const popularNews = await fetchMostPopularByViews();
 
@@ -40,6 +41,7 @@ newsSections.forEach(category => {
         });
     });
 
+    hideDisabledCategories(category, detailsElement);
     detailsElement.classList.add('news');
     popularNewsContainer.append(detailsElement);
 

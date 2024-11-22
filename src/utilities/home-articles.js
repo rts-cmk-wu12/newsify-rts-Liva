@@ -1,5 +1,6 @@
 import sectionsData from '../json/sections.json';
 
+const { hideDisabledCategories } = require('./hide-categories.js');
 const { saveArticle } = require('./save-article.js');
 const { fetchHomeTopStories } = require('./fetch-api.js');
 const homeNews = await fetchHomeTopStories();
@@ -56,8 +57,10 @@ newsSections.forEach(category => {
 
 
         saveArticle(articleElement, article.title);
-    });
 
+    });
+    
+    hideDisabledCategories(category, detailsElement);
     detailsElement.classList.add('news');
     homeNewsContainer.append(detailsElement);
 

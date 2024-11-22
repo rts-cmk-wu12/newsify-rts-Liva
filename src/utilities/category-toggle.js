@@ -1,14 +1,13 @@
 import sectionsData from '../json/sections.json';
 
 const categories = sectionsData.sections;
-console.log(categories);
 
 const settingsContainer = document.querySelector('#settings-container');
 let toggleStates = JSON.parse(localStorage.getItem('toggleStates')) || {};
 
 if (!localStorage.getItem('toggleStates')) {
-    toggleStates = categories.reduce((acc, _, index) => {
-        acc[`toggle-${index}`] = true;
+    toggleStates = categories.reduce((acc, category) => {
+        acc[`toggle-${category}`] = true;
         return acc;
     }, {});
     localStorage.setItem('toggleStates', JSON.stringify(toggleStates));
@@ -18,9 +17,9 @@ function saveToggleStates() {
     localStorage.setItem('toggleStates', JSON.stringify(toggleStates));
 }
 
-categories.forEach((category, index) => {
+categories.forEach((category) => {
     const categoryToggleContainer = document.createElement('div');
-    const toggleId = `toggle-${index}`;
+    const toggleId = `toggle-${category}`;
 
     categoryToggleContainer.innerHTML = `
     <div class="settings__category">
