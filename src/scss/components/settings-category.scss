@@ -1,0 +1,21 @@
+@use '../placeholders/root.scss';
+
+.settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid root.$soft-black;
+
+    &__category {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: 1rem 1rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    &__logo {
+        width: 1.5rem;
+    }
+}

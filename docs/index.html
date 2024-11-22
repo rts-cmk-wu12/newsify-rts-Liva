@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsify</title>
+    <script type="module" src="./index.bundle.js"></script>
+    <script type="module" src="./main.bundle.js"></script>
+</head>
+
+<body>
+    <div class="splash-screen" id="splash-screen">
+        <div class="loading" id="loading">
+            <img src="./icon/newsify-logo.svg" alt="logo" class="loading__logo bounce">
+            <h1 class="loading__name fadeout darkmode-white-text">newsify</h1>
+        </div>
+    </div>
+    <main>
+        <div class="onboarding" id="onboarding">
+            <div id="slider" class="slider">
+                <div class="slider__container">
+                    <div id="slider__roll" class="slider__roll">
+                        <div class="slider__info">
+                            <img src="./img/onboarding-one.png" alt="onboarding" class="light-mode-img">
+                            <img src="./img/onboarding-one-dark.png" alt="onboarding" class="dark-mode-img">
+                            <div>
+                                <h2 class="darkmode-white-text">Stay Connected, Everywhere, Anytime</h2>
+                                <p class="darkmode-grey-text">Welcome to Newsify, your ultimate destination for breaking news, exclusive stories,
+                                    and
+                                    tailored content.</p>
+                            </div>
+                        </div>
+                        <div class="slider__info">
+                            <img src="./img/onboarding-two.png" alt="onboarding" class="light-mode-img">
+                            <img src="./img/onboarding-two-dark.png" alt="onboarding" class="dark-mode-img">
+                            <div>
+                                <h2 class="darkmode-white-text">Become a Savvy Global Citizen.</h2>
+                                <p class="darkmode-grey-text">Discover tailored news that aligns with your interests and preferences. Your
+                                    personalized
+                                    news journey awaits!</p>
+                            </div>
+                        </div>
+                        <div class="slider__info">
+                            <img src="./img/onboarding-three.png" alt="onboarding" class="light-mode-img">
+                            <img src="./img/onboarding-three-dark.png" alt="onboarding" class="dark-mode-img">
+                            <div>
+                                <h2 class="darkmode-white-text">Enhance your News Journey Now!</h2>
+                                <p class="darkmode-grey-text">Be part of our dynamic community and contribute your insights and participate in
+                                    enriching conversations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__dots" id="slider__dots"></div>
+            <div class="slider__nav">
+                <form action="./login.html" class="slider__skip">
+                    <button>skip</button>
+                </form>
+                <button id="slider__next" class="slider__next">continue</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
