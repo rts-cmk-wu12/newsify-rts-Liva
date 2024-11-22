@@ -27,4 +27,3 @@ export function saveArticle(articleElement, articleTitle) {
       });
     }
   }
-  

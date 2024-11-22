@@ -35,8 +35,8 @@ archiveNews.results.forEach(article => {
             swipeAction.className = 'swipe-action-remove';
 
             const trashcanIcon = document.createElement('img');
-            trashcanIcon.src = '/icon/trashcan-white.svg';
-            trashcanIcon.alt = 'Bookmark';
+            trashcanIcon.src = 'icon/trashcan-white.svg';
+            trashcanIcon.alt = 'Trashcan';
             trashcanIcon.style.width = '2rem';
             trashcanIcon.style.height = '2rem';
 
