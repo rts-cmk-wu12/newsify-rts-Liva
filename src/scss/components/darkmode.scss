@@ -1,0 +1,40 @@
+@use '../placeholders/root.scss';
+@use '../placeholders/buttons.scss';
+
+.settings-info {
+    margin-block: 3rem 2rem;
+    text-align: center;
+    padding-inline: 1rem;
+    &__darkmode-btn {
+        @extend %button-transparent-green-big;
+        margin-bottom: 1rem;
+    }
+
+    &__version-text {
+        color: root.$light-grey;
+    }
+}
+
+body.darkmode {
+    background-color: root.$soft-dark-grey;
+}
+
+.footer.darkmode {
+    background-color: root.$soft-dark-grey;
+}
+
+.darkmode-white-text.darkmode {
+    color: root.$white;
+}
+
+.darkmode-grey-text.darkmode {
+    color: root.$light-grey;
+}
+
+.darkmode-white-line.darkmode {
+    border-bottom: 1px solid root.$white;
+}
+
+.darkmode-grey-input.darkmode {
+    background-color: root.$light-grey;
+}

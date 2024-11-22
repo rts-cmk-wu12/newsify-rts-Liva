@@ -1,0 +1,52 @@
+@use '../placeholders/root.scss';
+
+.news {
+    &__category {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid root.$soft-black;
+        list-style-type: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            right: 1rem;
+            content: url('/public/icon/arrow-right.svg');
+        }
+    }
+
+    &__logo {
+        width: 1.5rem;
+    }
+
+    &__article {
+        border-bottom: 1px solid root.$soft-black;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: 1rem;
+
+        &__cover {
+            width: 5rem;
+            height: 5rem;
+            border-radius: .8rem;
+        }
+
+        &__headline {
+            text-transform: capitalize;
+            font-size: 1em;
+        }
+
+        &__text {
+            font-size: 0.8em;
+        }
+    }
+}
+
+.news[open] .news__category::after {
+    content: url('/public/icon/arrow-down.svg');
+}

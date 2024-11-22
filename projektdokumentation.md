@@ -1,8 +1,8 @@
 # Projektdokumentation
 
-**Navn:** 
+**Navn:** Liva Kuhlmann
 
-**Hold:** WUxx
+**Hold:** WU12
 
 **Uddannelse:** Webudvikler
 
@@ -17,8 +17,10 @@
 -   CSS
 -   JavaScript
 -   Webpack
+-   WebpackServe
 -	Jest
--   ...
+-   Postcss
+-   FontMagician
 
 ---
 
